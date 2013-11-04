@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FDAF95C4-5126-42D5-B5D9-56740F751772}</ProjectGuid>
+    <ProjectGuid>{8F4FC4EF-ECBF-4F59-8584-8ED6544982D9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Student</RootNamespace>
-    <AssemblyName>Student</AssemblyName>
+    <RootNamespace>Rezultati</RootNamespace>
+    <AssemblyName>Rezultati</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,14 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Student.cs" />
+    <Compile Include="Rezultati.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Rezultati\Rezultati.csproj">
-      <Project>{8f4fc4ef-ecbf-4f59-8584-8ed6544982d9}</Project>
-      <Name>Rezultati</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
