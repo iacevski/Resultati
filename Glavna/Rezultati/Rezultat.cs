@@ -8,9 +8,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Rezultati
 {
-    public class Rezultati
+    public class Rezultat
     {
-        public Rezultati(){ }
+        public Rezultat(){ }
         [Key]
         public int RezultatiId { get; set; }
         

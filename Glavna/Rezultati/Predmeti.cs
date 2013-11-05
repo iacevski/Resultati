@@ -7,13 +7,13 @@ using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace Predmeti
+namespace Rezultati
 {
     public class Predmeti
     {
         public Predmeti() 
         {
-            ListaRezultati = new List<Rezultati>();
+            ListaRezultati = new List<Rezultat>();
         }
         [Key]
         public int PredmetId { get; set; }
@@ -21,6 +21,6 @@ namespace Predmeti
         public string PredmetName { get; set; }
         public string PredmetSemestar { get; set; }
 
-        public virtual ICollection<Rezultati> ListaRezultati { get; set; }
+        public virtual ICollection<Rezultat> ListaRezultati { get; set; }
     }
 }

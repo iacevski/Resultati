@@ -14,11 +14,11 @@ namespace Glavna
     {
         static void Main(string[] args)
         {
-            using (var ctx = new BazaZaRezultatiOdIspiti())
+            using (var ctx = new BazaZaRezultatiOdIspit())
             {
-                Student newStudent = new Student() { StudentIndex= "8", StudentName = "Acevski Ilce"};
+                Student newStudent = new Student() { StudentIndex= 8, StudentName = "Acevski Ilce"};
                 Predmeti newPredmet = new Predmeti() { PredmetName = "OOP", PredmetSemestar = "III" };
-                Rezultati rez = new Rezultati() { PoeniDomasno1 = 10 };
+                Rezultat rez = new Rezultat() { PoeniDomasno1 = 10 };
                 ctx.ListaRezultati.Add(rez);
                 ctx.SaveChanges();
 
