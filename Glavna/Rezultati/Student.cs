@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 
-
 namespace Rezultati
 {
     public class Student
