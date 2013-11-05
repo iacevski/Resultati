@@ -14,6 +14,7 @@ namespace BazaZaRezultatiPoStudenti
     {
         public BazaZaRezultatiPoStudent(): base() 
         {
+
         }
 
         public DbSet<Student> Studenti { get; set; }
