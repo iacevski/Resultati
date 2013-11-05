@@ -53,6 +53,16 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Predmeti\Predmeti.csproj">
+      <Project>{f2c898b1-7f80-4a4b-8975-4735ff8c3118}</Project>
+      <Name>Predmeti</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Student\Student.csproj">
+      <Project>{fdaf95c4-5126-42d5-b5d9-56740f751772}</Project>
+      <Name>Student</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

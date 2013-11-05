@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-
+using System.Data.Entity;
+using Predmeti;
+using Student;
 namespace Rezultati
 {
     public class Rezultati
@@ -23,13 +25,7 @@ namespace Rezultati
         public DateTime DataIIKolokvium { get; set; }
         public float PoeniIspit { get; set; }
         public DateTime DataIspit { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public float TotalScore
-        {
-            get;
-            set;
-
-        }
+        
         public bool Prijava { get; set; }
         public bool Uplatnica { get; set; }
         public string UcebnaGodina { get; set; }
@@ -37,9 +33,9 @@ namespace Rezultati
         //StudId and PredId is not following code first conventions name
         public int StudId { get; set; }
         public int PredId { get; set; }
-        [ForeignKey("StudId")]
+        
         public virtual Student Student { get; set; }
-        [ForeignKey("PredId")]
+        
         public virtual Predmet Predmet { get; set; }
     }
 }

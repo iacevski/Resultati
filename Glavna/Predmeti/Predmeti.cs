@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using Rezultati;
 
+using System.Data.Entity;
 namespace Predmeti
 {
     public class Predmeti
