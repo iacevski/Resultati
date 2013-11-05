@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 
 
@@ -12,7 +13,7 @@ namespace Student
     {
         public Student() 
         {
-            RezultatiList = new List<Rezultati>();
+            ListaRezultati = new List<Rezultati>();
         }
         [Key]
         public int StudentId { get; set; }
@@ -20,6 +21,6 @@ namespace Student
         public int StudentIndex { get; set; }
         public string StudentName { get; set; }
 
-        public virtual ICollection<Rezultati> RezultatiList { get; set; }
+        public virtual ICollection<Rezultati> ListaRezultati { get; set; }
     }
 }

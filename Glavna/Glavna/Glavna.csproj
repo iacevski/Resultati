@@ -55,6 +55,16 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BazaZaRezultatiOdIspiti\BazaZaRezultatiOdIspiti.csproj">
+      <Project>{50b559d4-0e66-44e2-8a2e-f4f8dfbb3e99}</Project>
+      <Name>BazaZaRezultatiOdIspiti</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rezultati\Rezultati.csproj">
+      <Project>{8f4fc4ef-ecbf-4f59-8584-8ed6544982d9}</Project>
+      <Name>Rezultati</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
