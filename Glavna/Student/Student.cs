@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
 using Rezultati;
 
 namespace Student
@@ -14,7 +14,7 @@ namespace Student
         {
             RezultatiList = new List<Rezultati>();
         }
-
+        [Key]
         public int StudentId { get; set; }
         [Required]
         public int StudentIndex { get; set; }

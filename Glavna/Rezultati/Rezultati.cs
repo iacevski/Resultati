@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Rezultati
 {
     public class Rezultati
     {
         public Rezultati(){ }
-
+        [Key]
         public int RezultatiId { get; set; }
-        [Required]
+        
         public float PoeniDomasno1 { get; set; }
         public float PoeniDomasno2 { get; set; }
         public float PoeniSeminarska { get; set; }
@@ -22,6 +23,13 @@ namespace Rezultati
         public DateTime DataIIKolokvium { get; set; }
         public float PoeniIspit { get; set; }
         public DateTime DataIspit { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public float TotalScore
+        {
+            get;
+            set;
+
+        }
         public bool Prijava { get; set; }
         public bool Uplatnica { get; set; }
         public string UcebnaGodina { get; set; }
@@ -29,8 +37,9 @@ namespace Rezultati
         //StudId and PredId is not following code first conventions name
         public int StudId { get; set; }
         public int PredId { get; set; }
-
+        [ForeignKey("StudId")]
         public virtual Student Student { get; set; }
+        [ForeignKey("PredId")]
         public virtual Predmet Predmet { get; set; }
     }
 }

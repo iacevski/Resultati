@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
 using Rezultati;
 
 namespace Predmeti
@@ -14,7 +14,7 @@ namespace Predmeti
         {
             RezultatiList = new List<Rezultati>();
         }
-
+        [Key]
         public int PredmetId { get; set; }
         [Required]
         public string PredmetName { get; set; }
