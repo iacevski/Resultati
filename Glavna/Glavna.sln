@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rezultati", "Rezultati\Rezu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BazaZaRezultatiOdIspiti", "BazaZaRezultatiOdIspiti\BazaZaRezultatiOdIspiti.csproj", "{50B559D4-0E66-44E2-8A2E-F4F8DFBB3E99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studenti", "Studenti\Studenti.csproj", "{96F0ECD0-182D-434D-AED0-239256B4C2DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{50B559D4-0E66-44E2-8A2E-F4F8DFBB3E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50B559D4-0E66-44E2-8A2E-F4F8DFBB3E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50B559D4-0E66-44E2-8A2E-F4F8DFBB3E99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96F0ECD0-182D-434D-AED0-239256B4C2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96F0ECD0-182D-434D-AED0-239256B4C2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96F0ECD0-182D-434D-AED0-239256B4C2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96F0ECD0-182D-434D-AED0-239256B4C2DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

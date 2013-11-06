@@ -16,8 +16,8 @@ namespace Glavna
         {
             using (var ctx = new BazaZaRezultatiOdIspit())
             {
-                Student newStudent = new Student() { StudentIndex= 8, StudentName = "Acevski Ilce"};
-                Predmeti newPredmet = new Predmeti() { PredmetName = "OOP", PredmetSemestar = "III" };
+                Student newStudent = new Student() { StudentIndex= 9, StudentName = "Петров Петар"};
+                Predmeti newPredmet = new Predmeti() { PredmetName = "Веб програмирање", PredmetSemestar = "V" };
                 Rezultat rez = new Rezultat() { PoeniDomasno1 = 10 };
                 rez.DataIIKolokvium = DateTime.Now;
                 rez.DataIKolokvium = DateTime.Now;
