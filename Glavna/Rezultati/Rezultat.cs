@@ -30,8 +30,8 @@ namespace Rezultati
         public string UcebnaGodina { get; set; }
 
         //StudId and PredId is not following code first conventions name
-        public int StudentId { get; set; }
-        public int PredmetId { get; set; }
+        public int StudId { get; set; }
+        public int PredId { get; set; }
         
         public virtual Student Student { get; set; }
         

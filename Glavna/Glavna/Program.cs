@@ -19,6 +19,12 @@ namespace Glavna
                 Student newStudent = new Student() { StudentIndex= 8, StudentName = "Acevski Ilce"};
                 Predmeti newPredmet = new Predmeti() { PredmetName = "OOP", PredmetSemestar = "III" };
                 Rezultat rez = new Rezultat() { PoeniDomasno1 = 10 };
+                rez.DataIIKolokvium = DateTime.Now;
+                rez.DataIKolokvium = DateTime.Now;
+                rez.DataIspit = DateTime.Now;
+                rez.Predmeti = newPredmet;
+                rez.Student = newStudent;
+                
                 ctx.ListaRezultati.Add(rez);
                 ctx.SaveChanges();
 
