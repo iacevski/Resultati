@@ -37,6 +37,7 @@
             // 
             // txtSemestar
             // 
+            this.txtSemestar.CausesValidation = false;
             this.txtSemestar.Location = new System.Drawing.Point(103, 77);
             this.txtSemestar.Name = "txtSemestar";
             this.txtSemestar.Size = new System.Drawing.Size(203, 20);

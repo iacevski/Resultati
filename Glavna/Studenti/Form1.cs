@@ -28,7 +28,7 @@ namespace Studenti
 
             VnesiStudentForma vsf1 = new VnesiStudentForma(db);
             vsf1.ShowDialog();
-
+           
 
         }
 

@@ -39,10 +39,11 @@ namespace Studenti
             this.btnVnesiStudent.Enabled = false;
 
             using (this.ns) {
-               Student novStudent = new Student() { StudentIndex=Int32.Parse(txtIndeks.Text), StudentName=txtIme.Text };
-                this.ns.Studenti.Add(novStudent);
-                this.ns.SaveChanges();
-                this.Close();
+                
+                    Student novStudent = new Student() { StudentIndex = Int32.Parse(txtIndeks.Text), StudentName = txtIme.Text };
+                    this.ns.Studenti.Add(novStudent);
+                    this.ns.SaveChanges();
+               
             }
         }
 
@@ -51,7 +52,12 @@ namespace Studenti
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lblIndex_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblImeStudent_Click(object sender, EventArgs e)
         {
 
         }

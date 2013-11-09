@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblIndex = new System.Windows.Forms.Label();
             this.txtIndeks = new System.Windows.Forms.TextBox();
             this.btnVnesiStudent = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblImeStudent = new System.Windows.Forms.Label();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // lblIndex
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Индекс";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblIndex.AutoSize = true;
+            this.lblIndex.Location = new System.Drawing.Point(12, 44);
+            this.lblIndex.Name = "lblIndex";
+            this.lblIndex.Size = new System.Drawing.Size(45, 13);
+            this.lblIndex.TabIndex = 0;
+            this.lblIndex.Text = "Индекс";
+            this.lblIndex.Click += new System.EventHandler(this.lblIndex_Click);
             // 
             // txtIndeks
             // 
@@ -62,14 +62,15 @@
             this.btnVnesiStudent.UseVisualStyleBackColor = true;
             this.btnVnesiStudent.Click += new System.EventHandler(this.btnVnesiStudent_Click);
             // 
-            // label2
+            // lblImeStudent
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Презиме и име";
+            this.lblImeStudent.AutoSize = true;
+            this.lblImeStudent.Location = new System.Drawing.Point(12, 81);
+            this.lblImeStudent.Name = "lblImeStudent";
+            this.lblImeStudent.Size = new System.Drawing.Size(85, 13);
+            this.lblImeStudent.TabIndex = 3;
+            this.lblImeStudent.Text = "Презиме и име";
+            this.lblImeStudent.Click += new System.EventHandler(this.lblImeStudent_Click);
             // 
             // txtIme
             // 
@@ -84,10 +85,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 185);
             this.Controls.Add(this.txtIme);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblImeStudent);
             this.Controls.Add(this.btnVnesiStudent);
             this.Controls.Add(this.txtIndeks);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblIndex);
             this.Name = "VnesiStudentForma";
             this.Text = "Внеси студент";
             this.Load += new System.EventHandler(this.VnesiStudentForma_Load);
@@ -98,10 +99,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIndex;
         private System.Windows.Forms.TextBox txtIndeks;
         private System.Windows.Forms.Button btnVnesiStudent;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblImeStudent;
         private System.Windows.Forms.TextBox txtIme;
     }
 }
