@@ -23,7 +23,7 @@ namespace Studenti
             db = new BazaZaRezultatiOdIspit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnVnesiNovStudent_Click(object sender, EventArgs e)
         {
 
             VnesiStudentForma vsf1 = new VnesiStudentForma(db);
@@ -32,9 +32,15 @@ namespace Studenti
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+                private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVnesiNovPredmet_Click_1(object sender, EventArgs e)
+        {
+            VnesiPredmetForma vpf1 = new VnesiPredmetForma(db);
+            vpf1.ShowDialog();
         }
     }
 }

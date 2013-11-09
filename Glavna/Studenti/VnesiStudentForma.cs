@@ -12,7 +12,6 @@ using System.Data.Entity;
 using Rezultati;
 using BazaZaRezultatiOdIspiti;
 
-
 namespace Studenti
 {
     public partial class VnesiStudentForma : Form
@@ -45,6 +44,16 @@ namespace Studenti
                 this.ns.SaveChanges();
                 this.Close();
             }
+        }
+
+        private void VnesiStudentForma_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

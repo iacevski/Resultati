@@ -59,6 +59,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VnesiPredmetForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VnesiPredmetForma.Designer.cs">
+      <DependentUpon>VnesiPredmetForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="VnesiStudentForma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VnesiPredmetForma.resx">
+      <DependentUpon>VnesiPredmetForma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VnesiStudentForma.resx">
       <DependentUpon>VnesiStudentForma.cs</DependentUpon>
     </EmbeddedResource>

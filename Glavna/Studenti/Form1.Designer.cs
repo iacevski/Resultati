@@ -28,27 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVnesiNovStudent = new System.Windows.Forms.Button();
+            this.btnVnesiNovPredmet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnVnesiNovStudent
             // 
-            this.button1.Location = new System.Drawing.Point(201, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnVnesiNovStudent.Location = new System.Drawing.Point(23, 22);
+            this.btnVnesiNovStudent.Name = "btnVnesiNovStudent";
+            this.btnVnesiNovStudent.Size = new System.Drawing.Size(141, 23);
+            this.btnVnesiNovStudent.TabIndex = 0;
+            this.btnVnesiNovStudent.Text = "Внеси нов студент";
+            this.btnVnesiNovStudent.UseVisualStyleBackColor = true;
+            this.btnVnesiNovStudent.Click += new System.EventHandler(this.btnVnesiNovStudent_Click);
+            // 
+            // btnVnesiNovPredmet
+            // 
+            this.btnVnesiNovPredmet.Location = new System.Drawing.Point(23, 52);
+            this.btnVnesiNovPredmet.Name = "btnVnesiNovPredmet";
+            this.btnVnesiNovPredmet.Size = new System.Drawing.Size(141, 23);
+            this.btnVnesiNovPredmet.TabIndex = 1;
+            this.btnVnesiNovPredmet.Text = "Внеси нов предмет";
+            this.btnVnesiNovPredmet.UseVisualStyleBackColor = true;
+            this.btnVnesiNovPredmet.Click += new System.EventHandler(this.btnVnesiNovPredmet_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 217);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(716, 319);
+            this.Controls.Add(this.btnVnesiNovPredmet);
+            this.Controls.Add(this.btnVnesiNovStudent);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Резултати од испити";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
@@ -56,7 +68,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVnesiNovStudent;
+        private System.Windows.Forms.Button btnVnesiNovPredmet;
     }
 }
 
