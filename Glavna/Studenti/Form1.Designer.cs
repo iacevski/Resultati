@@ -33,6 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnPromeniImePredmet = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnVnesiRezultati = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVnesiNovStudent
@@ -85,11 +86,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnVnesiRezultati
+            // 
+            this.btnVnesiRezultati.Location = new System.Drawing.Point(27, 193);
+            this.btnVnesiRezultati.Name = "btnVnesiRezultati";
+            this.btnVnesiRezultati.Size = new System.Drawing.Size(144, 25);
+            this.btnVnesiRezultati.TabIndex = 5;
+            this.btnVnesiRezultati.Text = "Внеси резултати";
+            this.btnVnesiRezultati.UseVisualStyleBackColor = true;
+            this.btnVnesiRezultati.Click += new System.EventHandler(this.btnVnesiRezultati_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 319);
+            this.Controls.Add(this.btnVnesiRezultati);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnPromeniImePredmet);
             this.Controls.Add(this.button1);
@@ -109,6 +121,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnPromeniImePredmet;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnVnesiRezultati;
     }
 }
 

@@ -65,11 +65,22 @@
     <Compile Include="VnesiPredmetForma.Designer.cs">
       <DependentUpon>VnesiPredmetForma.cs</DependentUpon>
     </Compile>
+    <Compile Include="VnesiRezultatiForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VnesiRezultatiForma.Designer.cs">
+      <DependentUpon>VnesiRezultatiForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="VnesiStudentForma.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VnesiStudentForma.Designer.cs">
       <DependentUpon>VnesiStudentForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -86,10 +97,21 @@
     <EmbeddedResource Include="VnesiPredmetForma.resx">
       <DependentUpon>VnesiPredmetForma.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VnesiRezultatiForma.resx">
+      <DependentUpon>VnesiRezultatiForma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VnesiStudentForma.resx">
       <DependentUpon>VnesiStudentForma.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Rezultati.Predmeti.datasource" />
+    <None Include="Properties\DataSources\Rezultati.Student.datasource" />
+    <None Include="Properties\DataSources\Studenti.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Studenti.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\VnesiPredmetForma.datasource" />
+    <None Include="Properties\DataSources\VnesiStudentForma.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,6 +121,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet.xsc">
+      <DependentUpon>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet.xss">
+      <DependentUpon>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -116,6 +149,9 @@
       <Project>{8f4fc4ef-ecbf-4f59-8584-8ed6544982d9}</Project>
       <Name>Rezultati</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

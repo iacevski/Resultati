@@ -125,5 +125,11 @@ namespace Studenti
                 db.SaveChanges();
             }
         }
+
+        private void btnVnesiRezultati_Click(object sender, EventArgs e)
+        {
+            VnesiRezultatiForma vrf1 = new VnesiRezultatiForma();
+            vrf1.ShowDialog();
+        }
     }
 }
