@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using BazaZaRezultatiOdIspiti;
+using Rezultati;
 
 namespace Studenti
 {
@@ -26,7 +27,7 @@ namespace Studenti
         private void btnVnesiNovStudent_Click(object sender, EventArgs e)
         {
 
-            VnesiStudentForma vsf1 = new VnesiStudentForma(db);
+            VnesiStudentForma vsf1 = new VnesiStudentForma();
             vsf1.ShowDialog();
            
 
@@ -39,8 +40,90 @@ namespace Studenti
 
         private void btnVnesiNovPredmet_Click_1(object sender, EventArgs e)
         {
-            VnesiPredmetForma vpf1 = new VnesiPredmetForma(db);
+            VnesiPredmetForma vpf1 = new VnesiPredmetForma();
             vpf1.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //// Query for Students .
+            IQueryable<Student> stQuery =
+                from st in db.Studenti
+                where st.StudentIndex > 8
+                select st;
+
+            foreach (Student st in stQuery)
+            {
+                Console.WriteLine("ID={0}, Index={1}, Ime={2}", st.StudentId,
+                    st.StudentIndex, st.StudentName);
+            }
+
+        }
+
+        private void btnPromeniImePredmet_Click(object sender, EventArgs e)
+        {
+            //// Query for Predmeti
+            IQueryable<Predmeti> prQuery =
+                from pr in db.Predmet
+                where pr.PredmetSemestar == "III"
+                select pr;
+
+            //foreach (Predmeti pr in prQuery)
+            //{
+            //    Console.WriteLine("ID={0}, Ime={1}, Semestar={2}", pr.PredmetId,
+            //        pr.PredmetName, pr.PredmetSemestar);
+            //}
+
+
+            // Execute the query, and change the column values 
+            // you want to change. 
+            foreach (Predmeti pr in prQuery)
+            {
+                pr.PredmetName = "Objektno Orientirano Programiranje";
+                // Insert any additional changes to column values.
+            }
+            // Submit the changes to the database. 
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Exception");
+                // Make some adjustments.
+                // ...
+                // Try again.
+                db.SaveChanges();
+            }
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //// Query for Students .
+            IQueryable<Student> stQuery =
+                from st in db.Studenti
+                where st.StudentIndex > 10
+                select st;
+
+            foreach (Student st in stQuery)
+            {
+                db.Studenti.Remove(st);
+            }
+           
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Exception");
+                // Make some adjustments.
+                // ...
+                // Try again.
+                db.SaveChanges();
+            }
         }
     }
 }

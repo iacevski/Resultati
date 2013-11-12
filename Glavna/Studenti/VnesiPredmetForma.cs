@@ -16,23 +16,15 @@ namespace Studenti
 {
     public partial class VnesiPredmetForma : Form
     {
-        private BazaZaRezultatiOdIspit ns;
+        
 
         public VnesiPredmetForma()
         {
             InitializeComponent();
-            ns = new BazaZaRezultatiOdIspit();
+            
         }
 
-        public VnesiPredmetForma(BazaZaRezultatiOdIspit db)
-        {
-            InitializeComponent();
-            this.ns = db;
-
-        }
-
-
-
+        
         private void VnesiPredmetForma_Load(object sender, EventArgs e)
         {
 
@@ -41,14 +33,15 @@ namespace Studenti
         private void btnVnesiPredmet_Click(object sender, EventArgs e)
         {
             
+             
                 this.txtImePredmet.Enabled = false;
                 this.txtSemestar.Enabled = false;
-                using (this.ns)
+                using (var db = new BazaZaRezultatiOdIspit())
                 {
 
                     Predmeti novPredmet = new Predmeti() { PredmetName = txtImePredmet.Text, PredmetSemestar = txtSemestar.Text };
-                    this.ns.Predmet.Add(novPredmet);
-                    this.ns.SaveChanges();
+                    db.Predmet.Add(novPredmet);
+                    db.SaveChanges();
 
 
                     this.txtImePredmet.Enabled = true;

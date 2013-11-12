@@ -17,34 +17,29 @@ namespace Studenti
     public partial class VnesiStudentForma : Form
     {
 
-        private BazaZaRezultatiOdIspit ns;
-
         public VnesiStudentForma()
         {
             InitializeComponent();
-            ns = new BazaZaRezultatiOdIspit();
-
         }
 
-        public VnesiStudentForma(BazaZaRezultatiOdIspit db)
-        {
-            InitializeComponent();
-            this.ns = db;
-
-        }
+        
 
         private void btnVnesiStudent_Click(object sender, EventArgs e)
         {
             //this.Visible = false;
-            this.btnVnesiStudent.Enabled = false;
-
-            using (this.ns) {
+            //this.btnVnesiStudent.Enabled = false;
+            this.txtIme.Enabled = false;
+            this.txtIndeks.Enabled = false;
+            using (var db= new BazaZaRezultatiOdIspit()) {
                 
                     Student novStudent = new Student() { StudentIndex = Int32.Parse(txtIndeks.Text), StudentName = txtIme.Text };
-                    this.ns.Studenti.Add(novStudent);
-                    this.ns.SaveChanges();
-               
+                    db.Studenti.Add(novStudent);
+                    db.SaveChanges();
+                    this.txtIme.Enabled = true;
+                    this.txtIndeks.Enabled = true;
             }
+     
+
         }
 
         private void VnesiStudentForma_Load(object sender, EventArgs e)
