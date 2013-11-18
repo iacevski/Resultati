@@ -87,9 +87,9 @@ namespace Studenti
             {
                 db.SaveChanges();
             }
-            catch (Exception)
+            catch (System.Exception ex)
             {
-                Console.WriteLine("Exception");
+                System.Windows.Forms.MessageBox.Show(ex.Message);
                 // Make some adjustments.
                 // ...
                 // Try again.
@@ -116,9 +116,9 @@ namespace Studenti
             {
                 db.SaveChanges();
             }
-            catch (Exception)
+            catch (System.Exception ex)
             {
-                Console.WriteLine("Exception");
+                System.Windows.Forms.MessageBox.Show(ex.Message);
                 // Make some adjustments.
                 // ...
                 // Try again.
