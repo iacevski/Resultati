@@ -25,6 +25,7 @@ namespace Glavna
                 rez.Predmeti = newPredmet;
                 rez.Student = newStudent;
                 
+                
                 ctx.ListaRezultati.Add(rez);
                 ctx.SaveChanges();
 

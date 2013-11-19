@@ -32,6 +32,7 @@ namespace Rezultati
         //StudId and PredId is not following code first conventions name
         public int StudId { get; set; }
         public int PredId { get; set; }
+        //public int Ocena { get; set; }
         
         public virtual Student Student { get; set; }
         

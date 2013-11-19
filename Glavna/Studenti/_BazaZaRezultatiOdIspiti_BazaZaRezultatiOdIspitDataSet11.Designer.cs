@@ -1230,7 +1230,7 @@ SELECT RezultatiId, PoeniDomasno1, PoeniDomasno2, PoeniSeminarska, PoeniPoseteno
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT RezultatiId, PoeniDomasno1, PoeniDomasno2, PoeniSeminarska, PoeniPosetenos" +
@@ -1238,6 +1238,33 @@ SELECT RezultatiId, PoeniDomasno1, PoeniDomasno2, PoeniSeminarska, PoeniPoseteno
                 "t, DataIspit, Prijava, Uplatnica, UcebnaGodina, StudId, PredId FROM dbo.Rezultat" +
                 "s";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        RezultatiId, PoeniDomasno1, PoeniDomasno2, PoeniSeminarska, PoeniPosetenost, PoeniIKolokvium, DataIKolokvium, PoeniIIKolokvium, DataIIKolokvium, PoeniIspit, DataIspit, Prijava, Uplatnica, UcebnaGodina,
+                          StudId, PredId
+FROM            Rezultats
+WHERE        (UcebnaGodina = N'txtUcGod')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT RezultatiId, PoeniDomasno1, PoeniDomasno2, PoeniSeminarska, PoeniPosetenost, PoeniIKolokvium, DataIKolokvium, PoeniIIKolokvium, DataIIKolokvium, PoeniIspit, DataIspit, Prijava, Uplatnica, UcebnaGodina, StudId, PredId FROM dbo.Rezultats WHERE UcebnaGodina=@txtUcGod";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@txtUcGod", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "UcebnaGodina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT RezultatiId, PoeniDomasno1, PoeniDomasno2, PoeniSeminarska, PoeniPosetenost, PoeniIKolokvium, DataIKolokvium, PoeniIIKolokvium, DataIIKolokvium, PoeniIspit, DataIspit, Prijava, Uplatnica, UcebnaGodina, StudId, PredId FROM dbo.Rezultats WHERE UcebnaGodina=@УчебнаГодина";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@УчебнаГодина", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "UcebnaGodina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT        Rezultats.PoeniDomasno1, Rezultats.PoeniDomasno2, Rezultats.PoeniSeminarska, Rezultats.RezultatiId, Rezultats.PoeniPosetenost, Rezultats.PoeniIKolokvium, Rezultats.DataIKolokvium, 
+                         Rezultats.PoeniIIKolokvium, Rezultats.DataIIKolokvium, Rezultats.PoeniIspit, Rezultats.DataIspit, Rezultats.Prijava, Rezultats.Uplatnica, Rezultats.UcebnaGodina, Rezultats.StudId, Rezultats.PredId
+FROM            Rezultats INNER JOIN
+                         Predmetis ON Rezultats.PredId = Predmetis.PredmetId INNER JOIN
+                         Students ON Rezultats.StudId = Students.StudentId
+WHERE        (Predmetis.PredmetName = @Предмет)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Предмет", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "PredmetName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1262,6 +1289,76 @@ SELECT RezultatiId, PoeniDomasno1, PoeniDomasno2, PoeniSeminarska, PoeniPoseteno
             _BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.RezultatsDataTable dataTable = new _BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.RezultatsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.RezultatsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.RezultatsDataTable dataTable, string txtUcGod) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((txtUcGod == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(txtUcGod));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy2(_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.RezultatsDataTable dataTable, string УчебнаГодина) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((УчебнаГодина == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(УчебнаГодина));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Предмети(_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.RezultatsDataTable dataTable, string Предмет) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((Предмет == null)) {
+                throw new global::System.ArgumentNullException("Предмет");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Предмет));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
