@@ -194,12 +194,9 @@ namespace Studenti
                 { PoeniDomasno1 = Int32.Parse(txtDom1.Text), PoeniDomasno2 = Int32.Parse(txtDom2.Text), 
                   PoeniSeminarska = Int32.Parse(txtSem.Text), PoeniPosetenost = Int32.Parse(txtPos.Text), 
                   PoeniIKolokvium = Int32.Parse(txtKol1.Text), PoeniIIKolokvium = Int32.Parse(txtKol2.Text),
-                  PoeniIspit = Int32.Parse(txtIspit.Text),
-                  DataIKolokvium = dateKol1.Value,
-                  DataIIKolokvium = dateKol2.Value,
-                  DataIspit = dateIspit.Value,
-                  Prijava = chkPri.Checked,
-                  Uplatnica = chkUpl.Checked, 
+                  PoeniIspit = Int32.Parse(txtIspit.Text), DataIKolokvium = dateKol1.Value.Date,
+                  DataIIKolokvium = dateKol2.Value.Date, DataIspit = dateIspit.Value.Date,
+                  Prijava = chkPri.Checked, Uplatnica = chkUpl.Checked, 
                   UcebnaGodina=txtUcGod.Text, StudId=studentID, PredId=predmetID };
                 rezul.ListaRezultati.Add(novRezultat);
                 rezul.SaveChanges();
@@ -275,6 +272,46 @@ namespace Studenti
             try
             {
                 this.rezultatsTableAdapter.Предмети(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats, предметToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void селектирај_по_предмет_и_по_студентToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.rezultatsTableAdapter.Селектирај_по_предмет_и_по_студент(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats, ((int)(System.Convert.ChangeType(индексToolStripTextBox.Text, typeof(int)))), предметToolStripTextBox1.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void селектирај_по_студентToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.rezultatsTableAdapter.Селектирај_по_студент(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats, ((int)(System.Convert.ChangeType(индексToolStripTextBox1.Text, typeof(int)))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+       
+        private void селектирај_по_датаToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.rezultatsTableAdapter.Селектирај_по_дата(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats, ((System.DateTime)(System.Convert.ChangeType(датаToolStripTextBox.Text, typeof(System.DateTime)))));
             }
             catch (System.Exception ex)
             {
