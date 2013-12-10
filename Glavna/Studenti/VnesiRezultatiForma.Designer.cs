@@ -96,6 +96,8 @@
             this.cmbDK1 = new System.Windows.Forms.ComboBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnPromeniVoBaza = new System.Windows.Forms.Button();
+            this.lblOcenka = new System.Windows.Forms.Label();
+            this.txtOcenka = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.predmetisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaZaRezultatiOdIspitiBazaZaRezultatiOdIspitDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet)).BeginInit();
@@ -655,11 +657,30 @@
             this.btnPromeniVoBaza.UseVisualStyleBackColor = true;
             this.btnPromeniVoBaza.Click += new System.EventHandler(this.btnPromeniVoBaza_Click);
             // 
+            // lblOcenka
+            // 
+            this.lblOcenka.AutoSize = true;
+            this.lblOcenka.Location = new System.Drawing.Point(418, 81);
+            this.lblOcenka.Name = "lblOcenka";
+            this.lblOcenka.Size = new System.Drawing.Size(45, 13);
+            this.lblOcenka.TabIndex = 49;
+            this.lblOcenka.Text = "Оценка";
+            // 
+            // txtOcenka
+            // 
+            this.txtOcenka.Location = new System.Drawing.Point(418, 95);
+            this.txtOcenka.Name = "txtOcenka";
+            this.txtOcenka.Size = new System.Drawing.Size(45, 20);
+            this.txtOcenka.TabIndex = 50;
+            this.txtOcenka.TextChanged += new System.EventHandler(this.txtOcenka_TextChanged);
+            // 
             // VnesiRezultatiForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 561);
+            this.Controls.Add(this.txtOcenka);
+            this.Controls.Add(this.lblOcenka);
             this.Controls.Add(this.btnPromeniVoBaza);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.cmbDK1);
@@ -786,5 +807,7 @@
         private System.Windows.Forms.ComboBox cmbDK1;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnPromeniVoBaza;
+        private System.Windows.Forms.Label lblOcenka;
+        private System.Windows.Forms.TextBox txtOcenka;
     }
 }

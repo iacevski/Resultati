@@ -271,8 +271,12 @@ namespace Studenti
                   PoeniIKolokvium = Int32.Parse(txtKol1.Text), PoeniIIKolokvium = Int32.Parse(txtKol2.Text),
                   PoeniIspit = Int32.Parse(txtIspit.Text), DataIKolokvium = dateKol1.Value.Date,
                   DataIIKolokvium = dateKol2.Value.Date, DataIspit = dateIspit.Value.Date,
-                  Prijava = chkPri.Checked, Uplatnica = chkUpl.Checked, 
-                  UcebnaGodina=txtUcGod.Text, StudId=studentID, PredId=predmetID };
+                  Prijava = chkPri.Checked, Uplatnica = chkUpl.Checked,
+                  UcebnaGodina = txtUcGod.Text,
+                  StudId = studentID,
+                  PredId = predmetID,
+                  Ocenka = Int32.Parse(txtOcenka.Text)
+                };
                 rezul.ListaRezultati.Add(novRezultat);
                 rezul.SaveChanges();
                 
@@ -502,6 +506,11 @@ namespace Studenti
                 dataGridView1.Refresh();
                 MessageBox.Show("Record Updated");
             }
+        }
+
+        private void txtOcenka_TextChanged(object sender, EventArgs e)
+        {
+
         }
       
     }

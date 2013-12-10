@@ -33,7 +33,7 @@ namespace Rezultati
         public int StudId { get; set; }
         public int PredId { get; set; }
         //public int Ocena { get; set; }
-        
+        public int Ocenka { get; set; }
         public virtual Student Student { get; set; }
         
         public virtual Predmeti Predmeti { get; set; }
