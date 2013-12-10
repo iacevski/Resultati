@@ -28,11 +28,7 @@ namespace Studenti
         }
 
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
 
         private void VnesiRezultatiForma_Load(object sender, EventArgs e)
         {
@@ -42,13 +38,83 @@ namespace Studenti
             this.predmetisTableAdapter.Fill(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet.Predmetis);
             // TODO: This line of code loads data into the '_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet.Students' table. You can move, or remove it, as needed.
             this.studentsTableAdapter.Fill(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet.Students);
+            diQuery();
+            dk1Query();
+            dk2Query();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            IQueryable<Predmeti> prQuery =
+                from pr in db.Predmet
+                where pr.PredmetName == comboBox1.Text
+                select pr;
 
+            if (prQuery.Count() == 0)
+                System.Windows.Forms.MessageBox.Show("Внесете нов предмет");
+
+            foreach (Predmeti pr in prQuery)
+            {
+                try
+                {
+                    txtPredID.Text = pr.PredmetId.ToString();
+                }
+                catch (System.Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message, "Внесете нов предмет");
+                }
+            }
+            
+            try
+            {
+
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                if (string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK1.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "PredId = '" + txtPredID.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK1.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "PredId = '" + txtPredID.Text + "' AND StudId ='" + txtStudID.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(cmbDK1.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "PredId = '" + txtPredID.Text + "' AND DataIspit='" + comboBox2.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "PredId = '" + txtPredID.Text + "' AND DataIKolokvium='" + cmbDK1.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK1.Text))
+                {
+                    bs.Filter = "PredId = '" + txtPredID.Text + "' AND DataIIKolokvium='" + cmbDK2.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(cmbDK1.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "PredId = '" + txtPredID.Text + "' AND DataIspit='" + comboBox2.Text + "' AND StudId ='" + txtStudID.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "PredId = '" + txtPredID.Text + "' AND DataIKolokvium='" + cmbDK1.Text + "' AND StudId ='" + txtStudID.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK1.Text))
+                {
+                    bs.Filter = "PredId = '" + txtPredID.Text + "' AND DataIIKolokvium='" + cmbDK2.Text + "' AND StudId ='" + txtStudID.Text + "'";
+                }
+                dataGridView1.DataSource = bs;
+               
+            }
+            catch (Exception)
+            {
+
+            }
+        }
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -99,6 +165,7 @@ namespace Studenti
 
         private void txtIndex_TextChanged(object sender, EventArgs e)
         {
+            
             txtPrezimeIme.Clear();
             
             x = Int32.Parse(txtIndex.Text);
@@ -107,61 +174,69 @@ namespace Studenti
                 where st.StudentIndex == x
                 select st;
 
-
             if (stQuery.Count()==0)
                 System.Windows.Forms.MessageBox.Show("Внесете презиме и име на студентот");
-
 
             foreach (Student st in stQuery)
             {
                 try
                 {
                     txtPrezimeIme.Text = st.StudentName;
+                    txtStudID.Text = st.StudentId.ToString();
                 }
                 catch (System.Exception ex)
                 {
                     System.Windows.Forms.MessageBox.Show(ex.Message, "Внесете презиме и име на студентот");
-                    //using (var ns = new BazaZaRezultatiOdIspit())
-                    //{
-
-                    //    Student novStudent = new Student() { StudentIndex = Int32.Parse(txtIndex.Text), StudentName = txtPrezimeIme.Text };
-                    //    ns.Studenti.Add(novStudent);
-                    //    ns.SaveChanges();
-                    //}
                 }
+            }
+
+            try
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                if (string.IsNullOrEmpty(txtPredID.Text) && string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK1.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "StudId = '" + txtStudID.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK1.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "StudId = '" + txtStudID.Text + "' AND PredId ='" + txtPredID.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(cmbDK1.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "StudId = '" + txtStudID.Text + "' AND DataIspit='" + comboBox2.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "StudId = '" + txtStudID.Text + "' AND DataIKolokvium='" + cmbDK1.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK1.Text))
+                {
+                    bs.Filter = "StudId = '" + txtStudID.Text + "' AND DataIIKolokvium='" + cmbDK2.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(cmbDK1.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "StudId = '" + txtStudID.Text + "' AND DataIspit='" + comboBox2.Text + "' AND PredId ='" + txtPredID.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "StudId = '" + txtStudID.Text + "' AND DataIKolokvium='" + cmbDK1.Text + "' AND PredId ='" + txtPredID.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK1.Text))
+                {
+                    bs.Filter = "StudId = '" + txtStudID.Text + "' AND DataIIKolokvium='" + cmbDK2.Text + "' AND PredId ='" + txtPredID.Text + "'";
+                }
+                dataGridView1.DataSource = bs;
+            }
+            catch (Exception)
+            {
+
             }
         }
 
         private void txtPrezimeIme_TextChanged(object sender, EventArgs e)
         {
-            //IQueryable<Student> stQuery =
-            //    from st in db.Studenti
-            //    where st.StudentIndex == Int32.Parse(txtIndex.Text)
-            //    select st;
-
-            //foreach (Student st in stQuery)
-            //{
-
-            //    try
-            //    {
-            //        txtPrezimeIme.Text = st.StudentName;
-            //        Console.WriteLine(txtPrezimeIme.Text);
-
-            //    }
-            //    catch (System.Exception ex)
-            //    {
-            //        System.Windows.Forms.MessageBox.Show(ex.Message);
-            //        using (var ss = new BazaZaRezultatiOdIspit())
-            //        {
-
-            //            Student novStudent = new Student() { StudentIndex = Int32.Parse(txtIndex.Text), StudentName = txtPrezimeIme.Text };
-            //            ss.Studenti.Add(novStudent);
-            //            ss.SaveChanges();
-            //        }
-            //    }
-
-            //}
-            }
+        }
 
         private void btnVnesiRezultat_Click(object sender, EventArgs e)
         {
@@ -220,107 +295,219 @@ namespace Studenti
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        private void txtUcGod_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                this.rezultatsTableAdapter.FillBy(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats);
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                bs.Filter = "UcebnaGodina like '%" + txtUcGod.Text + "%' AND PredId ='"+ txtPredID.Text +"'";
+                dataGridView1.DataSource = bs;
             }
-            catch (System.Exception ex)
+            catch (Exception) 
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+
             }
 
         }
 
-        
+        private void dateIspit_ValueChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
 
-        private void fillBy2ToolStripButton_Click_1(object sender, EventArgs e)
+            //    BindingSource bs = new BindingSource();
+            //    bs.DataSource = dataGridView1.DataSource;
+            //    bs.Filter = string.Format("DataIspit=#{0:MM/dd/yyyy}#", dateIspit.Value.ToShortDateString());
+            //    dataGridView1.DataSource = bs;
+            //}
+            //catch (Exception)
+            //{
+
+            //}
+        }
+
+        private void txtStudID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPredID_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void diQuery()
+        {
+            var diQuery =
+                from di in db.ListaRezultati
+                group di by di.DataIspit;
+
+            foreach (var di in diQuery)
+            {
+                comboBox2.Items.Add(di.Key.ToShortDateString());
+            }
+        }
+
+        private void dk1Query()
+        {
+            var dk1Query =
+                from dk1 in db.ListaRezultati
+                group dk1 by dk1.DataIKolokvium;
+
+            foreach (var dk1 in dk1Query)
+            {
+                cmbDK1.Items.Add(dk1.Key.ToShortDateString());
+            }
+        }
+
+        private void dk2Query()
+        {
+            var dk2Query =
+                from dk2 in db.ListaRezultati
+                group dk2 by dk2.DataIIKolokvium;
+
+            foreach (var dk2 in dk2Query)
+            {
+                cmbDK2.Items.Add(dk2.Key.ToShortDateString());
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            
+            try
+            {
+
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                if (string.IsNullOrEmpty(txtPredID.Text) && string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(cmbDK1.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "DataIspit='" + comboBox2.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(txtPredID.Text) && string.IsNullOrEmpty(cmbDK1.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "DataIspit='" + comboBox2.Text + "' AND StudId ='" + txtStudID.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(cmbDK1.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "DataIspit='" + comboBox2.Text + "' AND PredId='" + txtPredID.Text + "'";
+                }
+                else
+                {
+                    bs.Filter = "DataIspit='" + comboBox2.Text + "' AND StudId='" + txtStudID.Text + "' AND PredId ='" + txtPredID.Text + "'";
+                }
+                dataGridView1.DataSource = bs;
+                dateIspit.Value = DateTime.Parse(comboBox2.Text);
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+
+        private void cmbDK1_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                this.rezultatsTableAdapter.FillBy2(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats, учебнаГодинаToolStripTextBox.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
 
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                if (string.IsNullOrEmpty(txtPredID.Text) && string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "DataIKolokvium='" + cmbDK1.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(txtPredID.Text) && string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "DataIKolokvium='" + cmbDK1.Text + "' AND StudId ='" + txtStudID.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK2.Text))
+                {
+                    bs.Filter = "DataIKolokvium='" + cmbDK1.Text + "' AND PredId='" + txtPredID.Text + "'";
+                }
+                else
+                {
+                    bs.Filter = "DataIKolokvium='" + cmbDK1.Text + "' AND StudId='" + txtStudID.Text + "' AND PredId ='" + txtPredID.Text + "'";
+                }
+                dataGridView1.DataSource = bs;
+                
+                dateKol1.Value = DateTime.Parse(cmbDK1.Text);
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
-        
-        private void fillToolStripButton_Click(object sender, EventArgs e)
+        private void cmbDK2_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                this.rezultatsTableAdapter.Fill(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
 
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                if (string.IsNullOrEmpty(txtPredID.Text) && string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK1.Text))
+                {
+                    bs.Filter = "DataIIKolokvium='" + cmbDK2.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(txtPredID.Text) && string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK1.Text))
+                {
+                    bs.Filter = "DataIIKolokvium='" + cmbDK2.Text + "' AND StudId ='" + txtStudID.Text + "'";
+                }
+                else if (string.IsNullOrEmpty(txtStudID.Text) && string.IsNullOrEmpty(comboBox2.Text) && string.IsNullOrEmpty(cmbDK1.Text))
+                {
+                    bs.Filter = "DataIIKolokvium='" + cmbDK2.Text + "' AND PredId='" + txtPredID.Text + "'";
+                }
+                else
+                {
+                    bs.Filter = "DataIIKolokvium='" + cmbDK2.Text + "' AND StudId='" + txtStudID.Text + "' AND PredId ='" + txtPredID.Text + "'";
+                }
+                dataGridView1.DataSource = bs;
+                dateKol2.Value = DateTime.Parse(cmbDK2.Text);
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
-        private void fillBy1ToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void предметиToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.rezultatsTableAdapter.Предмети(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats, предметToolStripTextBox.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void селектирај_по_предмет_и_по_студентToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.rezultatsTableAdapter.Селектирај_по_предмет_и_по_студент(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats, ((int)(System.Convert.ChangeType(индексToolStripTextBox.Text, typeof(int)))), предметToolStripTextBox1.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void селектирај_по_студентToolStripButton_Click(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
         {
             try
             {
-                this.rezultatsTableAdapter.Селектирај_по_студент(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats, ((int)(System.Convert.ChangeType(индексToolStripTextBox1.Text, typeof(int)))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
 
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                bs.Filter = null;
+                dataGridView1.DataSource = bs;
+
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
-       
-        private void селектирај_по_датаToolStripButton_Click(object sender, EventArgs e)
+        private void dataGridView1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                this.rezultatsTableAdapter.Селектирај_по_дата(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats, ((System.DateTime)(System.Convert.ChangeType(датаToolStripTextBox.Text, typeof(System.DateTime)))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
+            // TODO: This line of code loads data into the 'gridTestDataSet.Emp' table. You can move, or remove it, as needed.
+            this.rezultatsTableAdapter.Fill(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats);
         }
+        private void btnPromeniVoBaza_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure to save Changes", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+            if (dr == DialogResult.Yes)
+            {
+                this.rezultatsTableAdapter.Update(_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1.Rezultats);
+                dataGridView1.Refresh();
+                MessageBox.Show("Record Updated");
+            }
+        }
+      
     }
+
 }
+
 
     
 

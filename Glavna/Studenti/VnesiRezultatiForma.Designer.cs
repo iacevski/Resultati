@@ -6,7 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VnesiRezultatiForma));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.predmetisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bazaZaRezultatiOdIspitiBazaZaRezultatiOdIspitDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -87,31 +86,16 @@
             this.txtUcGod = new System.Windows.Forms.TextBox();
             this.btnVnesiRezultat = new System.Windows.Forms.Button();
             this.btnVnesiStudent = new System.Windows.Forms.Button();
-            this.fillBy2ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.учебнаГодинаToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.учебнаГодинаToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillBy2ToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.предметиToolStrip = new System.Windows.Forms.ToolStrip();
-            this.предметToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.предметToolStripTextBox = new System.Windows.Forms.ToolStripComboBox();
-            this.предметиToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.селектирај_по_предмет_и_по_студентToolStrip = new System.Windows.Forms.ToolStrip();
-            this.индексToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.индексToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.предметToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.предметToolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.селектирај_по_предмет_и_по_студентToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.селектирај_по_студентToolStrip = new System.Windows.Forms.ToolStrip();
-            this.индексToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.индексToolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.селектирај_по_студентToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.селектирај_по_датаToolStrip = new System.Windows.Forms.ToolStrip();
-            this.датаToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.датаToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.селектирај_по_датаToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.txtPredID = new System.Windows.Forms.TextBox();
+            this.txtStudID = new System.Windows.Forms.TextBox();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rezultatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.rezultatBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cmbDK2 = new System.Windows.Forms.ComboBox();
+            this.cmbDK1 = new System.Windows.Forms.ComboBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnPromeniVoBaza = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.predmetisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaZaRezultatiOdIspitiBazaZaRezultatiOdIspitDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet)).BeginInit();
@@ -119,11 +103,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rezultatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1)).BeginInit();
-            this.fillBy2ToolStrip.SuspendLayout();
-            this.предметиToolStrip.SuspendLayout();
-            this.селектирај_по_предмет_и_по_студентToolStrip.SuspendLayout();
-            this.селектирај_по_студентToolStrip.SuspendLayout();
-            this.селектирај_по_датаToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rezultatBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rezultatBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -131,9 +113,9 @@
             this.comboBox1.DataSource = this.predmetisBindingSource;
             this.comboBox1.DisplayMember = "PredmetName";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(4, 167);
+            this.comboBox1.Location = new System.Drawing.Point(18, 36);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 21);
+            this.comboBox1.Size = new System.Drawing.Size(137, 21);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.ValueMember = "PredmetId";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -189,9 +171,9 @@
             this.studIdDataGridViewTextBoxColumn,
             this.predIdDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.rezultatsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 305);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 174);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(823, 194);
+            this.dataGridView1.Size = new System.Drawing.Size(823, 167);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -326,7 +308,7 @@
             // dateKol1
             // 
             this.dateKol1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateKol1.Location = new System.Drawing.Point(484, 168);
+            this.dateKol1.Location = new System.Drawing.Point(509, 30);
             this.dateKol1.Name = "dateKol1";
             this.dateKol1.Size = new System.Drawing.Size(95, 20);
             this.dateKol1.TabIndex = 5;
@@ -335,7 +317,7 @@
             // lblIndex
             // 
             this.lblIndex.AutoSize = true;
-            this.lblIndex.Location = new System.Drawing.Point(210, 148);
+            this.lblIndex.Location = new System.Drawing.Point(197, 20);
             this.lblIndex.Name = "lblIndex";
             this.lblIndex.Size = new System.Drawing.Size(45, 13);
             this.lblIndex.TabIndex = 6;
@@ -345,7 +327,7 @@
             // lblPrezimeIme
             // 
             this.lblPrezimeIme.AutoSize = true;
-            this.lblPrezimeIme.Location = new System.Drawing.Point(276, 151);
+            this.lblPrezimeIme.Location = new System.Drawing.Point(263, 20);
             this.lblPrezimeIme.Name = "lblPrezimeIme";
             this.lblPrezimeIme.Size = new System.Drawing.Size(85, 13);
             this.lblPrezimeIme.TabIndex = 7;
@@ -354,7 +336,7 @@
             // 
             // txtIndex
             // 
-            this.txtIndex.Location = new System.Drawing.Point(213, 167);
+            this.txtIndex.Location = new System.Drawing.Point(200, 36);
             this.txtIndex.Name = "txtIndex";
             this.txtIndex.Size = new System.Drawing.Size(51, 20);
             this.txtIndex.TabIndex = 8;
@@ -363,7 +345,7 @@
             // lblPredmet
             // 
             this.lblPredmet.AutoSize = true;
-            this.lblPredmet.Location = new System.Drawing.Point(5, 146);
+            this.lblPredmet.Location = new System.Drawing.Point(19, 15);
             this.lblPredmet.Name = "lblPredmet";
             this.lblPredmet.Size = new System.Drawing.Size(52, 13);
             this.lblPredmet.TabIndex = 9;
@@ -372,7 +354,7 @@
             // lblDatumIspit
             // 
             this.lblDatumIspit.AutoSize = true;
-            this.lblDatumIspit.Location = new System.Drawing.Point(603, 143);
+            this.lblDatumIspit.Location = new System.Drawing.Point(617, 8);
             this.lblDatumIspit.Name = "lblDatumIspit";
             this.lblDatumIspit.Size = new System.Drawing.Size(102, 13);
             this.lblDatumIspit.TabIndex = 10;
@@ -380,7 +362,7 @@
             // 
             // txtPrezimeIme
             // 
-            this.txtPrezimeIme.Location = new System.Drawing.Point(270, 167);
+            this.txtPrezimeIme.Location = new System.Drawing.Point(257, 36);
             this.txtPrezimeIme.Name = "txtPrezimeIme";
             this.txtPrezimeIme.Size = new System.Drawing.Size(108, 20);
             this.txtPrezimeIme.TabIndex = 11;
@@ -389,7 +371,7 @@
             // lblPoeni
             // 
             this.lblPoeni.AutoSize = true;
-            this.lblPoeni.Location = new System.Drawing.Point(-6, 214);
+            this.lblPoeni.Location = new System.Drawing.Point(8, 95);
             this.lblPoeni.Name = "lblPoeni";
             this.lblPoeni.Size = new System.Drawing.Size(57, 13);
             this.lblPoeni.TabIndex = 12;
@@ -398,7 +380,7 @@
             // 
             // txtDom1
             // 
-            this.txtDom1.Location = new System.Drawing.Point(57, 214);
+            this.txtDom1.Location = new System.Drawing.Point(71, 95);
             this.txtDom1.Name = "txtDom1";
             this.txtDom1.Size = new System.Drawing.Size(67, 20);
             this.txtDom1.TabIndex = 13;
@@ -407,7 +389,7 @@
             // lblDom1
             // 
             this.lblDom1.AutoSize = true;
-            this.lblDom1.Location = new System.Drawing.Point(57, 200);
+            this.lblDom1.Location = new System.Drawing.Point(71, 81);
             this.lblDom1.Name = "lblDom1";
             this.lblDom1.Size = new System.Drawing.Size(65, 13);
             this.lblDom1.TabIndex = 14;
@@ -415,7 +397,7 @@
             // 
             // txtDom2
             // 
-            this.txtDom2.Location = new System.Drawing.Point(139, 213);
+            this.txtDom2.Location = new System.Drawing.Point(153, 94);
             this.txtDom2.Name = "txtDom2";
             this.txtDom2.Size = new System.Drawing.Size(68, 20);
             this.txtDom2.TabIndex = 15;
@@ -424,7 +406,7 @@
             // lblDom2
             // 
             this.lblDom2.AutoSize = true;
-            this.lblDom2.Location = new System.Drawing.Point(139, 200);
+            this.lblDom2.Location = new System.Drawing.Point(153, 81);
             this.lblDom2.Name = "lblDom2";
             this.lblDom2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblDom2.Size = new System.Drawing.Size(65, 13);
@@ -434,7 +416,7 @@
             // 
             // txtSem
             // 
-            this.txtSem.Location = new System.Drawing.Point(226, 213);
+            this.txtSem.Location = new System.Drawing.Point(240, 94);
             this.txtSem.Name = "txtSem";
             this.txtSem.Size = new System.Drawing.Size(73, 20);
             this.txtSem.TabIndex = 17;
@@ -443,7 +425,7 @@
             // lblSem
             // 
             this.lblSem.AutoSize = true;
-            this.lblSem.Location = new System.Drawing.Point(223, 200);
+            this.lblSem.Location = new System.Drawing.Point(237, 81);
             this.lblSem.Name = "lblSem";
             this.lblSem.Size = new System.Drawing.Size(70, 13);
             this.lblSem.TabIndex = 18;
@@ -451,7 +433,7 @@
             // 
             // txtPos
             // 
-            this.txtPos.Location = new System.Drawing.Point(310, 213);
+            this.txtPos.Location = new System.Drawing.Point(324, 94);
             this.txtPos.Name = "txtPos";
             this.txtPos.Size = new System.Drawing.Size(77, 20);
             this.txtPos.TabIndex = 19;
@@ -460,7 +442,7 @@
             // lblPos
             // 
             this.lblPos.AutoSize = true;
-            this.lblPos.Location = new System.Drawing.Point(307, 200);
+            this.lblPos.Location = new System.Drawing.Point(321, 81);
             this.lblPos.Name = "lblPos";
             this.lblPos.Size = new System.Drawing.Size(67, 13);
             this.lblPos.TabIndex = 20;
@@ -468,7 +450,7 @@
             // 
             // txtKol1
             // 
-            this.txtKol1.Location = new System.Drawing.Point(484, 211);
+            this.txtKol1.Location = new System.Drawing.Point(509, 97);
             this.txtKol1.Name = "txtKol1";
             this.txtKol1.Size = new System.Drawing.Size(95, 20);
             this.txtKol1.TabIndex = 21;
@@ -476,40 +458,41 @@
             // 
             // txtKol2
             // 
-            this.txtKol2.Location = new System.Drawing.Point(595, 211);
+            this.txtKol2.Location = new System.Drawing.Point(620, 97);
             this.txtKol2.Name = "txtKol2";
-            this.txtKol2.Size = new System.Drawing.Size(85, 20);
+            this.txtKol2.Size = new System.Drawing.Size(99, 20);
             this.txtKol2.TabIndex = 22;
             this.txtKol2.Text = "0";
             // 
             // txtIspit
             // 
-            this.txtIspit.Location = new System.Drawing.Point(712, 211);
+            this.txtIspit.Location = new System.Drawing.Point(744, 97);
             this.txtIspit.Name = "txtIspit";
-            this.txtIspit.Size = new System.Drawing.Size(89, 20);
+            this.txtIspit.Size = new System.Drawing.Size(97, 20);
             this.txtIspit.TabIndex = 23;
             this.txtIspit.Text = "0";
             // 
             // dateKol2
             // 
             this.dateKol2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateKol2.Location = new System.Drawing.Point(595, 168);
+            this.dateKol2.Location = new System.Drawing.Point(620, 30);
             this.dateKol2.Name = "dateKol2";
-            this.dateKol2.Size = new System.Drawing.Size(110, 20);
+            this.dateKol2.Size = new System.Drawing.Size(99, 20);
             this.dateKol2.TabIndex = 24;
             // 
             // dateIspit
             // 
             this.dateIspit.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateIspit.Location = new System.Drawing.Point(712, 168);
+            this.dateIspit.Location = new System.Drawing.Point(743, 30);
             this.dateIspit.Name = "dateIspit";
-            this.dateIspit.Size = new System.Drawing.Size(97, 20);
+            this.dateIspit.Size = new System.Drawing.Size(98, 20);
             this.dateIspit.TabIndex = 25;
+            this.dateIspit.ValueChanged += new System.EventHandler(this.dateIspit_ValueChanged);
             // 
             // lblKol1
             // 
             this.lblKol1.AutoSize = true;
-            this.lblKol1.Location = new System.Drawing.Point(481, 200);
+            this.lblKol1.Location = new System.Drawing.Point(519, 81);
             this.lblKol1.Name = "lblKol1";
             this.lblKol1.Size = new System.Drawing.Size(71, 13);
             this.lblKol1.TabIndex = 26;
@@ -518,7 +501,7 @@
             // lblKol2
             // 
             this.lblKol2.AutoSize = true;
-            this.lblKol2.Location = new System.Drawing.Point(592, 200);
+            this.lblKol2.Location = new System.Drawing.Point(617, 81);
             this.lblKol2.Name = "lblKol2";
             this.lblKol2.Size = new System.Drawing.Size(71, 13);
             this.lblKol2.TabIndex = 27;
@@ -527,7 +510,7 @@
             // lblIspit
             // 
             this.lblIspit.AutoSize = true;
-            this.lblIspit.Location = new System.Drawing.Point(709, 200);
+            this.lblIspit.Location = new System.Drawing.Point(761, 81);
             this.lblIspit.Name = "lblIspit";
             this.lblIspit.Size = new System.Drawing.Size(38, 13);
             this.lblIspit.TabIndex = 28;
@@ -536,7 +519,7 @@
             // chkUpl
             // 
             this.chkUpl.AutoSize = true;
-            this.chkUpl.Location = new System.Drawing.Point(76, 266);
+            this.chkUpl.Location = new System.Drawing.Point(90, 135);
             this.chkUpl.Name = "chkUpl";
             this.chkUpl.Size = new System.Drawing.Size(81, 17);
             this.chkUpl.TabIndex = 29;
@@ -546,7 +529,7 @@
             // chkPri
             // 
             this.chkPri.AutoSize = true;
-            this.chkPri.Location = new System.Drawing.Point(186, 267);
+            this.chkPri.Location = new System.Drawing.Point(200, 136);
             this.chkPri.Name = "chkPri";
             this.chkPri.Size = new System.Drawing.Size(66, 17);
             this.chkPri.TabIndex = 30;
@@ -557,7 +540,7 @@
             // lblUcGod
             // 
             this.lblUcGod.AutoSize = true;
-            this.lblUcGod.Location = new System.Drawing.Point(277, 253);
+            this.lblUcGod.Location = new System.Drawing.Point(291, 122);
             this.lblUcGod.Name = "lblUcGod";
             this.lblUcGod.Size = new System.Drawing.Size(82, 13);
             this.lblUcGod.TabIndex = 31;
@@ -565,25 +548,26 @@
             // 
             // txtUcGod
             // 
-            this.txtUcGod.Location = new System.Drawing.Point(280, 269);
+            this.txtUcGod.Location = new System.Drawing.Point(294, 138);
             this.txtUcGod.Name = "txtUcGod";
             this.txtUcGod.Size = new System.Drawing.Size(106, 20);
             this.txtUcGod.TabIndex = 32;
             this.txtUcGod.Text = "2013/2014";
+            this.txtUcGod.TextChanged += new System.EventHandler(this.txtUcGod_TextChanged);
             // 
             // btnVnesiRezultat
             // 
-            this.btnVnesiRezultat.Location = new System.Drawing.Point(572, 264);
+            this.btnVnesiRezultat.Location = new System.Drawing.Point(586, 133);
             this.btnVnesiRezultat.Name = "btnVnesiRezultat";
             this.btnVnesiRezultat.Size = new System.Drawing.Size(213, 35);
             this.btnVnesiRezultat.TabIndex = 33;
-            this.btnVnesiRezultat.Text = "Внеси резултат";
+            this.btnVnesiRezultat.Text = "Внеси нов резултат";
             this.btnVnesiRezultat.UseVisualStyleBackColor = true;
             this.btnVnesiRezultat.Click += new System.EventHandler(this.btnVnesiRezultat_Click);
             // 
             // btnVnesiStudent
             // 
-            this.btnVnesiStudent.Location = new System.Drawing.Point(378, 143);
+            this.btnVnesiStudent.Location = new System.Drawing.Point(371, 35);
             this.btnVnesiStudent.Name = "btnVnesiStudent";
             this.btnVnesiStudent.Size = new System.Drawing.Size(118, 21);
             this.btnVnesiStudent.TabIndex = 34;
@@ -591,214 +575,98 @@
             this.btnVnesiStudent.UseVisualStyleBackColor = true;
             this.btnVnesiStudent.Click += new System.EventHandler(this.btnVnesiStudent_Click);
             // 
-            // fillBy2ToolStrip
+            // txtPredID
             // 
-            this.fillBy2ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.fillBy2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.учебнаГодинаToolStripLabel,
-            this.учебнаГодинаToolStripTextBox,
-            this.fillBy2ToolStripButton});
-            this.fillBy2ToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillBy2ToolStrip.Name = "fillBy2ToolStrip";
-            this.fillBy2ToolStrip.Size = new System.Drawing.Size(967, 25);
-            this.fillBy2ToolStrip.TabIndex = 37;
-            this.fillBy2ToolStrip.Text = "fillBy2ToolStrip";
+            this.txtPredID.AllowDrop = true;
+            this.txtPredID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.txtPredID.Location = new System.Drawing.Point(101, 8);
+            this.txtPredID.Name = "txtPredID";
+            this.txtPredID.Size = new System.Drawing.Size(54, 20);
+            this.txtPredID.TabIndex = 42;
+            this.txtPredID.Visible = false;
+            this.txtPredID.TextChanged += new System.EventHandler(this.txtPredID_TextChanged);
             // 
-            // учебнаГодинаToolStripLabel
+            // txtStudID
             // 
-            this.учебнаГодинаToolStripLabel.Name = "учебнаГодинаToolStripLabel";
-            this.учебнаГодинаToolStripLabel.Size = new System.Drawing.Size(89, 22);
-            this.учебнаГодинаToolStripLabel.Text = "УчебнаГодина:";
+            this.txtStudID.AcceptsReturn = true;
+            this.txtStudID.Location = new System.Drawing.Point(354, 9);
+            this.txtStudID.Name = "txtStudID";
+            this.txtStudID.Size = new System.Drawing.Size(46, 20);
+            this.txtStudID.TabIndex = 43;
+            this.txtStudID.Visible = false;
+            this.txtStudID.TextChanged += new System.EventHandler(this.txtStudID_TextChanged);
             // 
-            // учебнаГодинаToolStripTextBox
+            // studentBindingSource
             // 
-            this.учебнаГодинаToolStripTextBox.Name = "учебнаГодинаToolStripTextBox";
-            this.учебнаГодинаToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.studentBindingSource.DataSource = typeof(Rezultati.Student);
             // 
-            // fillBy2ToolStripButton
+            // rezultatBindingSource
             // 
-            this.fillBy2ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillBy2ToolStripButton.Name = "fillBy2ToolStripButton";
-            this.fillBy2ToolStripButton.Size = new System.Drawing.Size(172, 22);
-            this.fillBy2ToolStripButton.Text = "Селектирај по учебна година";
-            this.fillBy2ToolStripButton.Click += new System.EventHandler(this.fillBy2ToolStripButton_Click_1);
+            this.rezultatBindingSource.DataSource = typeof(Rezultati.Rezultat);
             // 
-            // предметиToolStrip
+            // comboBox2
             // 
-            this.предметиToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.предметToolStripLabel,
-            this.предметToolStripTextBox,
-            this.предметиToolStripButton,
-            this.toolStripTextBox1});
-            this.предметиToolStrip.Location = new System.Drawing.Point(0, 25);
-            this.предметиToolStrip.Name = "предметиToolStrip";
-            this.предметиToolStrip.Size = new System.Drawing.Size(967, 25);
-            this.предметиToolStrip.TabIndex = 38;
-            this.предметиToolStrip.Text = "предметиToolStrip";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(743, 58);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(98, 21);
+            this.comboBox2.TabIndex = 44;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged_1);
             // 
-            // предметToolStripLabel
+            // rezultatBindingSource1
             // 
-            this.предметToolStripLabel.Name = "предметToolStripLabel";
-            this.предметToolStripLabel.Size = new System.Drawing.Size(58, 22);
-            this.предметToolStripLabel.Text = "Предмет:";
+            this.rezultatBindingSource1.DataSource = typeof(Rezultati.Rezultat);
             // 
-            // предметToolStripTextBox
+            // cmbDK2
             // 
-            this.предметToolStripTextBox.Items.AddRange(new object[] {
-            "ООП",
-            "Веб програмирање",
-            "Визуелно програмирање"});
-            this.предметToolStripTextBox.Name = "предметToolStripTextBox";
-            this.предметToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.cmbDK2.FormattingEnabled = true;
+            this.cmbDK2.Location = new System.Drawing.Point(620, 58);
+            this.cmbDK2.Name = "cmbDK2";
+            this.cmbDK2.Size = new System.Drawing.Size(99, 21);
+            this.cmbDK2.TabIndex = 45;
+            this.cmbDK2.SelectedIndexChanged += new System.EventHandler(this.cmbDK2_SelectedIndexChanged);
             // 
-            // предметиToolStripButton
+            // cmbDK1
             // 
-            this.предметиToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.предметиToolStripButton.Name = "предметиToolStripButton";
-            this.предметиToolStripButton.Size = new System.Drawing.Size(138, 22);
-            this.предметиToolStripButton.Text = "Селектирај по предмет";
-            this.предметиToolStripButton.Click += new System.EventHandler(this.предметиToolStripButton_Click);
+            this.cmbDK1.FormattingEnabled = true;
+            this.cmbDK1.Location = new System.Drawing.Point(509, 58);
+            this.cmbDK1.Name = "cmbDK1";
+            this.cmbDK1.Size = new System.Drawing.Size(95, 21);
+            this.cmbDK1.TabIndex = 46;
+            this.cmbDK1.SelectedIndexChanged += new System.EventHandler(this.cmbDK1_SelectedIndexChanged);
             // 
-            // toolStripTextBox1
+            // btnReset
             // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
+            this.btnReset.Location = new System.Drawing.Point(3, 144);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(68, 24);
+            this.btnReset.TabIndex = 47;
+            this.btnReset.Text = "Ресетирај";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // селектирај_по_предмет_и_по_студентToolStrip
+            // btnPromeniVoBaza
             // 
-            this.селектирај_по_предмет_и_по_студентToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.индексToolStripLabel,
-            this.индексToolStripTextBox,
-            this.предметToolStripLabel1,
-            this.предметToolStripTextBox1,
-            this.селектирај_по_предмет_и_по_студентToolStripButton});
-            this.селектирај_по_предмет_и_по_студентToolStrip.Location = new System.Drawing.Point(0, 50);
-            this.селектирај_по_предмет_и_по_студентToolStrip.Name = "селектирај_по_предмет_и_по_студентToolStrip";
-            this.селектирај_по_предмет_и_по_студентToolStrip.Size = new System.Drawing.Size(967, 25);
-            this.селектирај_по_предмет_и_по_студентToolStrip.TabIndex = 39;
-            this.селектирај_по_предмет_и_по_студентToolStrip.Text = "селектирај_по_предмет_и_по_студентToolStrip";
-            // 
-            // индексToolStripLabel
-            // 
-            this.индексToolStripLabel.Name = "индексToolStripLabel";
-            this.индексToolStripLabel.Size = new System.Drawing.Size(50, 22);
-            this.индексToolStripLabel.Text = "Индекс:";
-            // 
-            // индексToolStripTextBox
-            // 
-            this.индексToolStripTextBox.Name = "индексToolStripTextBox";
-            this.индексToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // предметToolStripLabel1
-            // 
-            this.предметToolStripLabel1.Name = "предметToolStripLabel1";
-            this.предметToolStripLabel1.Size = new System.Drawing.Size(58, 22);
-            this.предметToolStripLabel1.Text = "Предмет:";
-            // 
-            // предметToolStripTextBox1
-            // 
-            this.предметToolStripTextBox1.Name = "предметToolStripTextBox1";
-            this.предметToolStripTextBox1.Size = new System.Drawing.Size(100, 25);
-            // 
-            // селектирај_по_предмет_и_по_студентToolStripButton
-            // 
-            this.селектирај_по_предмет_и_по_студентToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.селектирај_по_предмет_и_по_студентToolStripButton.Name = "селектирај_по_предмет_и_по_студентToolStripButton";
-            this.селектирај_по_предмет_и_по_студентToolStripButton.Size = new System.Drawing.Size(219, 22);
-            this.селектирај_по_предмет_и_по_студентToolStripButton.Text = "Селектирај_по_предмет_и_по_студент";
-            this.селектирај_по_предмет_и_по_студентToolStripButton.Click += new System.EventHandler(this.селектирај_по_предмет_и_по_студентToolStripButton_Click);
-            // 
-            // селектирај_по_студентToolStrip
-            // 
-            this.селектирај_по_студентToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.индексToolStripLabel1,
-            this.индексToolStripTextBox1,
-            this.селектирај_по_студентToolStripButton,
-            this.toolStripButton1});
-            this.селектирај_по_студентToolStrip.Location = new System.Drawing.Point(0, 75);
-            this.селектирај_по_студентToolStrip.Name = "селектирај_по_студентToolStrip";
-            this.селектирај_по_студентToolStrip.Size = new System.Drawing.Size(967, 25);
-            this.селектирај_по_студентToolStrip.TabIndex = 40;
-            this.селектирај_по_студентToolStrip.Text = "селектирај_по_студентToolStrip";
-            // 
-            // индексToolStripLabel1
-            // 
-            this.индексToolStripLabel1.Name = "индексToolStripLabel1";
-            this.индексToolStripLabel1.Size = new System.Drawing.Size(50, 22);
-            this.индексToolStripLabel1.Text = "Индекс:";
-            // 
-            // индексToolStripTextBox1
-            // 
-            this.индексToolStripTextBox1.Name = "индексToolStripTextBox1";
-            this.индексToolStripTextBox1.Size = new System.Drawing.Size(100, 25);
-            // 
-            // селектирај_по_студентToolStripButton
-            // 
-            this.селектирај_по_студентToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.селектирај_по_студентToolStripButton.Name = "селектирај_по_студентToolStripButton";
-            this.селектирај_по_студентToolStripButton.Size = new System.Drawing.Size(137, 22);
-            this.селектирај_по_студентToolStripButton.Text = "Селектирај_по_студент";
-            this.селектирај_по_студентToolStripButton.Click += new System.EventHandler(this.селектирај_по_студентToolStripButton_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // селектирај_по_датаToolStrip
-            // 
-            this.селектирај_по_датаToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.датаToolStripLabel,
-            this.датаToolStripTextBox,
-            this.селектирај_по_датаToolStripButton,
-            this.toolStripButton2});
-            this.селектирај_по_датаToolStrip.Location = new System.Drawing.Point(0, 100);
-            this.селектирај_по_датаToolStrip.Name = "селектирај_по_датаToolStrip";
-            this.селектирај_по_датаToolStrip.Size = new System.Drawing.Size(967, 25);
-            this.селектирај_по_датаToolStrip.TabIndex = 41;
-            this.селектирај_по_датаToolStrip.Text = "селектирај_по_датаToolStrip";
-            // 
-            // датаToolStripLabel
-            // 
-            this.датаToolStripLabel.Name = "датаToolStripLabel";
-            this.датаToolStripLabel.Size = new System.Drawing.Size(35, 22);
-            this.датаToolStripLabel.Text = "Дата:";
-            // 
-            // датаToolStripTextBox
-            // 
-            this.датаToolStripTextBox.Name = "датаToolStripTextBox";
-            this.датаToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // селектирај_по_датаToolStripButton
-            // 
-            this.селектирај_по_датаToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.селектирај_по_датаToolStripButton.Name = "селектирај_по_датаToolStripButton";
-            this.селектирај_по_датаToolStripButton.Size = new System.Drawing.Size(119, 22);
-            this.селектирај_по_датаToolStripButton.Text = "Селектирај_по_дата";
-            this.селектирај_по_датаToolStripButton.Click += new System.EventHandler(this.селектирај_по_датаToolStripButton_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.btnPromeniVoBaza.Location = new System.Drawing.Point(418, 133);
+            this.btnPromeniVoBaza.Name = "btnPromeniVoBaza";
+            this.btnPromeniVoBaza.Size = new System.Drawing.Size(162, 34);
+            this.btnPromeniVoBaza.TabIndex = 48;
+            this.btnPromeniVoBaza.Text = "Внеси промени во база";
+            this.btnPromeniVoBaza.UseVisualStyleBackColor = true;
+            this.btnPromeniVoBaza.Click += new System.EventHandler(this.btnPromeniVoBaza_Click);
             // 
             // VnesiRezultatiForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 561);
-            this.Controls.Add(this.селектирај_по_датаToolStrip);
-            this.Controls.Add(this.селектирај_по_студентToolStrip);
-            this.Controls.Add(this.селектирај_по_предмет_и_по_студентToolStrip);
-            this.Controls.Add(this.предметиToolStrip);
+            this.Controls.Add(this.btnPromeniVoBaza);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.cmbDK1);
+            this.Controls.Add(this.cmbDK2);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.txtStudID);
+            this.Controls.Add(this.txtPredID);
             this.Controls.Add(this.btnVnesiStudent);
             this.Controls.Add(this.btnVnesiRezultat);
             this.Controls.Add(this.txtUcGod);
@@ -831,7 +699,6 @@
             this.Controls.Add(this.dateKol1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.fillBy2ToolStrip);
             this.Name = "VnesiRezultatiForma";
             this.Text = "Внеси резултати";
             this.Load += new System.EventHandler(this.VnesiRezultatiForma_Load);
@@ -842,16 +709,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rezultatsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet1)).EndInit();
-            this.fillBy2ToolStrip.ResumeLayout(false);
-            this.fillBy2ToolStrip.PerformLayout();
-            this.предметиToolStrip.ResumeLayout(false);
-            this.предметиToolStrip.PerformLayout();
-            this.селектирај_по_предмет_и_по_студентToolStrip.ResumeLayout(false);
-            this.селектирај_по_предмет_и_по_студентToolStrip.PerformLayout();
-            this.селектирај_по_студентToolStrip.ResumeLayout(false);
-            this.селектирај_по_студентToolStrip.PerformLayout();
-            this.селектирај_по_датаToolStrip.ResumeLayout(false);
-            this.селектирај_по_датаToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rezultatBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rezultatBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -898,6 +758,14 @@
         private System.Windows.Forms.CheckBox chkPri;
         private System.Windows.Forms.Label lblUcGod;
         private System.Windows.Forms.TextBox txtUcGod;
+        private System.Windows.Forms.Button btnVnesiRezultat;
+        private System.Windows.Forms.Button btnVnesiStudent;
+        private System.Windows.Forms.TextBox txtPredID;
+        private System.Windows.Forms.TextBox txtStudID;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private System.Windows.Forms.BindingSource rezultatBindingSource;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource rezultatBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn rezultatiIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn poeniDomasno1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn poeniDomasno2DataGridViewTextBoxColumn;
@@ -914,32 +782,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ucebnaGodinaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn predIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnVnesiRezultat;
-        private System.Windows.Forms.Button btnVnesiStudent;
-        private System.Windows.Forms.ToolStrip fillBy2ToolStrip;
-        private System.Windows.Forms.ToolStripLabel учебнаГодинаToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox учебнаГодинаToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillBy2ToolStripButton;
-        private System.Windows.Forms.ToolStrip предметиToolStrip;
-        private System.Windows.Forms.ToolStripLabel предметToolStripLabel;
-        private System.Windows.Forms.ToolStripButton предметиToolStripButton;
-        private System.Windows.Forms.ToolStripComboBox предметToolStripTextBox;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStrip селектирај_по_предмет_и_по_студентToolStrip;
-        private System.Windows.Forms.ToolStripLabel индексToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox индексToolStripTextBox;
-        private System.Windows.Forms.ToolStripLabel предметToolStripLabel1;
-        private System.Windows.Forms.ToolStripTextBox предметToolStripTextBox1;
-        private System.Windows.Forms.ToolStripButton селектирај_по_предмет_и_по_студентToolStripButton;
-        private System.Windows.Forms.ToolStrip селектирај_по_студентToolStrip;
-        private System.Windows.Forms.ToolStripLabel индексToolStripLabel1;
-        private System.Windows.Forms.ToolStripTextBox индексToolStripTextBox1;
-        private System.Windows.Forms.ToolStripButton селектирај_по_студентToolStripButton;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStrip селектирај_по_датаToolStrip;
-        private System.Windows.Forms.ToolStripLabel датаToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox датаToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton селектирај_по_датаToolStripButton;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ComboBox cmbDK2;
+        private System.Windows.Forms.ComboBox cmbDK1;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnPromeniVoBaza;
     }
 }

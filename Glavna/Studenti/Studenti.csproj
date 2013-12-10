@@ -87,6 +87,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet11.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet31.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +122,7 @@
     <None Include="Properties\DataSources\Form1.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\DataSources\Rezultati.Predmeti.datasource" />
+    <None Include="Properties\DataSources\Rezultati.Rezultat.datasource" />
     <None Include="Properties\DataSources\Rezultati.Student.datasource" />
     <None Include="Properties\DataSources\Studenti.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\Studenti.Properties.Settings.datasource" />
@@ -147,6 +158,28 @@
     </None>
     <None Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet11.xss">
       <DependentUpon>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet21.xsc">
+      <DependentUpon>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet21.xss">
+      <DependentUpon>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet31.xsc">
+      <DependentUpon>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet31.xss">
+      <DependentUpon>_BazaZaRezultatiOdIspiti_BazaZaRezultatiOdIspitDataSet31.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
