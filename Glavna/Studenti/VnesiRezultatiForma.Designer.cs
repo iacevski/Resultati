@@ -639,7 +639,7 @@
             // 
             this.btnReset.Location = new System.Drawing.Point(3, 144);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(68, 24);
+            this.btnReset.Size = new System.Drawing.Size(81, 24);
             this.btnReset.TabIndex = 47;
             this.btnReset.Text = "Ресетирај";
             this.btnReset.UseVisualStyleBackColor = true;
